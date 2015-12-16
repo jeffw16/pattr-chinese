@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Truly private messaging. No logs, no hassle.">
+
+  <title>Pattr &ndash; Home</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='pure-min.css')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='grids-responsive-min.css')}}">
+  <link rel=stylesheet type="text/css" href="{{ url_for('static', filename='marketing.css') }}">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+  <script src="{{ url_for('static', filename='jquery-2.1.4.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='typed.js')}}"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if (window.location.href.indexOf('chat') > -1) {
+        window.location.href='http://pattr.me';
+      }
+    });
+
+    $(function(){
+      $(".element").typed({
+        strings: ["Welcome to pattr"],
+        typeSpeed: 40
+      });
+      setTimeout(function item(){$(".typed-cursor").fadeOut(300)}, 2300);
+      setTimeout(function item(){$(".element").fadeOut(500)}, 2500);
+      setTimeout(function item(){$("#main-name").fadeIn(800)}, 3010);
+    });
+
+    function startChat() {
+      var roomCode = Math.random().toString(36).slice(-8);
+      if(window.location.href == 'http://pattr.me' || window.location.href == 'http://www.pattr.me') {
+        window.location.href='http://chat.pattr.me/c/'+roomCode;
+      }
+      else {
+        window.location.href='/c/'+roomCode;
+      }
+    }
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-70158941-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body>
+  <div class="splash-container">
+    <a href="https://github.com/justinpotts/pattr/">
+      <img src="{{ url_for('static', filename='forkongithub.png')}}" style="position: absolute; top: 0; left: 0; border: 0;">
+    </a>
+    <div class="splash">
+      <h1 class="splash-head" style="font-family:Aller"><span class="element"></span><div id="main-name" style="display:none"><span style="color:lime">&middot;</span>pattr</div></h1>
+      <p class="splash-subhead">
+        Truly private messaging. No logs, no hassle.
+      </p>
+      <p>
+        <a onclick="startChat()" role="button" class="pure-button-primary pure-button">Start a private chat</a>
+      </p>
+    </div>
+  </div>
+  <div class="content-wrapper">
+    <div class="content">
+      <h2 class="content-head is-center">We make it easy to have untracked convos instantly.</h2>
+      <div class="pure-g">
+        <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+          <h3 class="content-subhead"><i class="fa fa-rocket"></i>Get started quickly. No sign in required.</h3>
+          <p>
+            Click the button to start a private chat, then share the link with you friends. It doesn't get any easier than that.
+          </p>
+        </div>
+        <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+          <h3 class="content-subhead"><i class="fa fa-trash-o"></i>Messages aren't kept on our servers.</h3>
+          <p>
+            We don't keep records of any conversations, which means you can talk about anything you want, trace-free.
+          </p>
+        </div>
+        <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+          <h3 class="content-subhead"><i class="fa fa-pencil"></i>We kept design in mind.</h3>
+          <p>
+            That's why everything you see will have a beautiful design, and be as simple and minimalistic as possible.
+          </p>
+        </div>
+        <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+          <h3 class="content-subhead"><i class="fa fa-code-fork"></i>We're open source</h3>
+          <p>
+            We believe in fostering innovation and openness on the web. That's why we decided to make the code open to you. Want to contribute? Click <a href="https://github.com/justinpotts/pattr">here</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="ribbon l-box-lrg pure-g">
+      <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+        <p>
+          <iframe width="430" height="315" src="https://www.youtube.com/embed/MJfAkJXLmwk" autoplay="0" frameborder="0" allowfullscreen></iframe>
+        </p>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+        <h2 class="content-head content-head-ribbon">Learn more</h2>
+        <p>
+          We developed pattr with privacy and efficiency in mind. Unlike other disposable chat
+          services, we never save your data on our servers, ensuring your conversation stays
+          private and secure. To start a chat, all you have to do is share a link. No signing
+          in or providing an email address.
+        </p>
+        <p>
+          <strong>Our mission:</strong>
+          Pattr believes in fostering an open web, with maximum security and privacy for its users.
+          We do this by providing a secure experience on the web for users to communicate quickly,
+          privately, and securely.
+        <p>
+          <strong>On Advertisements:</strong>
+          We don't want your experience to be ruined by pesky advertisements, which also lowers the quality
+          of our site. We run purely off donations, so please… don't hesitate to send a gift our way!
+        </p>
+      </div>
+    </div>
+    <div class="content">
+      <h2 class="content-head is-center">About Us</h2>
+      <div class="pure-g">
+        <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+          <form action="/donate" method="post">
+            <center>
+              <strong><h2>Help support Pattr for just $1.</h2></strong>
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="{{ key }}"
+                data-description="Pattr Donation"
+                data-amount="500"
+                data-locale="auto"></script>
+            </center>
+          </form>
+        </div>
+        <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+          <h4>Donate</h4>
+          <p>
+            We pay for our fees completely off of donations from our users. Please
+            help keep the site up and running for a little bit longer, just for the
+            cost a cup of coffee.
+          </p>
+          <h4>Contact us</h4>
+          <p>
+            We'd love to here your feedback, questions, and comments. Please send us
+            and email at <a class="email-link" href="mailto:pattr@pattr.me">pattr@pattr.me</a> and let
+            us know what you think. We typically respond in 1-3 business days.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer l-box is-center">
+      Open source and developed by Justin Potts and Alex Meza.
+      <br>
+      View the code <a href="https://github.com/justinpotts/pattr/">here</a>.
+      <br>
+      <a href="mailto:pattr@pattr.me">Contact us</a> | <a href="https://github.com/justinpotts/pattr/">Contribute</a> | <a href="/tos">Legal</a>
+    </div>
+  </div>
+</body>
+</html>
